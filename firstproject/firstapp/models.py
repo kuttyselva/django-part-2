@@ -5,6 +5,15 @@ class Topic(models.Model):
     top=models.CharField(max_length=264,unique=True)
     def __str__(self):
         return self.top
+
+class Exercise(models.Model):
+    fname=models.CharField(max_length=264,unique=True)
+    lname=models.CharField(max_length=264,unique=True)
+    email = models.EmailField(max_length=70,blank=True, null= True, unique= True)
+    def __str__(self):
+        return self.fname
+
+
 class Webpage(models.Model):
     topic =models.ForeignKey(Topic,on_delete=models.DO_NOTHING,)
     name=models.CharField(max_length=264,unique=True)

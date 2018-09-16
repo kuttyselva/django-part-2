@@ -1,11 +1,41 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>hello</title>
+    <title>Models</title>
+    <link rel="stylesheet" href="{% static "mystyle.css"%}" />
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
-<h1>hiii index page</h1>
-<h2>{{insert}}</h2>
+<h1>hiii models printing django level 2</h1>
+<h2>AccessRecord in DB</h2>
+
+<div class="djangotwo">
+  {% if exe %}
+  <table class="table">
+    <thead>
+      <th scope="col">Site fname</th>
+      <th scope="col">Site laccess</th>
+        <th scope="col">Site mail</th>
+    </thead>
+
+
+  {% for x in exe %}
+
+  <tr>
+    
+    <td>{{x.fname}}</td>
+      <td>{{x.lname}}</td>
+        <td>{{x.email}}</td>
+  </tr>
+
+  {% endfor %}
+    </table>
+
+    {% else %}
+        <p>no acc record</p>
+    {% endif %}
+</div>
   </body>
 </html>

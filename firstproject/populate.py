@@ -5,7 +5,7 @@ django.setup()
 
 #fake pop script
 import random
-from firstapp.models import AccessRecord,Webpage,Topic
+from firstapp.models import AccessRecord,Webpage,Topic,Exercise
 from faker import Faker
 fakegen=Faker()
 Topics=['Search','Social','Marketplace','news','games']
@@ -21,11 +21,15 @@ def populate(N=5):
         top=add_topic()
         #create fake data
 
+
         fake_url=fakegen.url()
         fake_date=fakegen.date()
         fake_name=fakegen.company()
+        fake_mail=fakegen.email()
 
         #create new webpage entry
+        exe=Exercise.objects.get_or_create(fname=fake_name,lname=fake_name,email=fake_mail)[0]
+        exe.save()
 
         webpg=Webpage.objects.get_or_create(topic=top,url=fake_url,name=fake_name)[0]
 
