@@ -7,6 +7,7 @@ class Topic(models.Model):
         return self.top
 
 class Exercise(models.Model):
+    
     fname=models.CharField(max_length=264,unique=True)
     lname=models.CharField(max_length=264,unique=True)
     email = models.EmailField(max_length=70,blank=True, null= True, unique= True)
