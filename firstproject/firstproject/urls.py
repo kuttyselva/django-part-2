@@ -23,4 +23,5 @@ urlpatterns = [
     url('first/',include('firstapp.urls')),
     url('',views.index,name='index'),
 
+
 ]

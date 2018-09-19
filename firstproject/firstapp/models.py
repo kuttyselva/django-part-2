@@ -6,19 +6,19 @@ class Topic(models.Model):
     def __str__(self):
         return self.top
 
-class Exercise(models.Model):
-    
+class Exe(models.Model):
+
     fname=models.CharField(max_length=264,unique=True)
     lname=models.CharField(max_length=264,unique=True)
     email = models.EmailField(max_length=70,blank=True, null= True, unique= True)
-    def __str__(self):
-        return self.fname
+    #def __str__(self):
+    #    return self.fname
 
 
 class Webpage(models.Model):
     topic =models.ForeignKey(Topic,on_delete=models.DO_NOTHING,)
     name=models.CharField(max_length=264,unique=True)
-    url=models.URLField(unique=True)
+    url=models.URLField(unique=False)
     def __str__(self):
         return self.name
 class AccessRecord(models.Model):
