@@ -17,3 +17,6 @@ def index(request):
         else:
             print('error form invalid')
     return render(request,'firstapp/index.html',{'form':form})
+def success(request):
+    dic={'kiki':"mumu"}
+    return render(request,'firstapp/success.html',content=dic)

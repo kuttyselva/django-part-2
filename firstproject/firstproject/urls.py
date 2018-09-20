@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('first/',include('firstapp.urls')),
     url('',views.index,name='index'),
+    url('success/',include('firstapp.urls')),
 
 
 ]
