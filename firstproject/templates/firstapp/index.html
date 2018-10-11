@@ -17,7 +17,8 @@
   <div class="jumbotron">
     <h1>welcome users</h1>
     <h2>signup here</h2>
-<form class="" action="{% static "success.html"%}" method="post">
+<form class="" action="" method="post">
+  <div class="form-group">
   {% csrf_token %}
 
 
@@ -59,7 +60,8 @@
  {% endfor %}
 
 {% csrf_token %}
-<input type="submit" class="btn btn-primary"  name="" value="submit">
+<input type="submit" class="btn btn-primary" href=""  name="" value="submit">
+</div>
 </form>
   </div>
 
